@@ -4,6 +4,7 @@
   "description": "Topmarks plugin for checking scroll performance",
   "main": "./lib/scrollspeed.js",
   "scripts": {
+    "prepublish": "npm run compile",
     "test": "mocha --compilers js:babel-core/register test",
     "compile": "babel --presets es2015 --plugins add-module-exports -d lib/ src/",
     "compile-watch": "babel --watch --presets es2015 --plugins add-module-exports -d lib/ src/"

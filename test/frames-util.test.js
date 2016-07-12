@@ -1,6 +1,6 @@
 import chai from 'chai';
 import DevtoolsTimelineModel from 'devtools-timeline-model';
-import FramesUtil from '../lib/frames-util';
+import FramesUtil from '../src/frames-util';
 import fs from 'fs';
 import path from 'path';
 

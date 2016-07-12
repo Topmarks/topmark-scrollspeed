@@ -14,9 +14,6 @@ let scrollspeed = (app, options, next) => {
         } else {
           app.scrollHeight = -parseInt(params.result.value);
 
-          console.log(app.scrollHeight);
-          console.log(TRACE_CATEGORIES.join(','));
-
           let rawEvents = [];
 
           chrome.Tracing.dataCollected((data) => {
@@ -28,7 +25,6 @@ let scrollspeed = (app, options, next) => {
             let model = new DevtoolsTimelineModel(rawEvents);
             let frames = new FramesUtil(model.frameModel()._frames);
             app.Chrome.Close({port: options.port, id: tab.id}).then(() => {
-              console.log(frames);
               app.frames = frames;
               next();
             }).catch(err => next(err));
@@ -38,16 +34,13 @@ let scrollspeed = (app, options, next) => {
             "categories": TRACE_CATEGORIES.join(','),
             "options": "sampling-frequency=10000"
           }).then((params)=>{
-            console.log('life');
-            chrome.send('Input.synthesizeScrollGesture', {x: 0, y: 0, xDistance: 0, yDistance: app.scrollHeight, repeatCount: 2}).then((params)=>{
-              console.log('testing');
+            chrome.send('Input.synthesizeScrollGesture', {x: 0, y: 0, xDistance: 0, yDistance: app.scrollHeight, repeatCount: 1}).then((params)=>{
               chrome.Tracing.end()
             }).catch((err) => {
               console.log(err);
             });
           }).catch(err => console.log(err));
 
-          console.log(app.scrollHeight);
         }
       });
     }).catch(err => console.log(err));
