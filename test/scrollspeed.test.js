@@ -26,4 +26,20 @@ describe('Scrollspeed Plugin', () => {
       done();
     });
   });
+  it('should load multiple times', function(done){
+    this.timeout(20000);
+    let topmark = new Topmark({default: {id: "topcoat"}});
+    let filePath = path.resolve(__dirname, '../src/scrollspeed');
+    topmark.register(filePath).then((results) => {
+      results[0].report.totalFrameCount.should.be.above(0);
+      topmark.register(filePath).then((results) => {
+        results[0].report.totalFrameCount.should.be.above(0);
+        done();
+      }).catch((err) => {
+        console.log(err);
+      });
+    }).catch((err) => {
+      console.log(err);
+    });
+  });
 });

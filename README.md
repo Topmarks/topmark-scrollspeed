@@ -1,4 +1,6 @@
-# Scrollspeed [![Build Status](https://travis-ci.org/Topmarks/topmark-scrollspeed.svg?branch=master)](https://travis-ci.org/Topmarks/topmark-scrollspeed) [![Coverage Status](https://coveralls.io/repos/github/Topmarks/topmark-scrollspeed/badge.svg?branch=master)](https://coveralls.io/github/Topmarks/topmark-scrollspeed?branch=master)
+# Scrollspeed
+
+[![Build Status](https://travis-ci.org/Topmarks/topmark-scrollspeed.svg?branch=master)](https://travis-ci.org/Topmarks/topmark-scrollspeed) [![Coverage Status](https://coveralls.io/repos/github/Topmarks/topmark-scrollspeed/badge.svg?branch=master)](https://coveralls.io/github/Topmarks/topmark-scrollspeed?branch=master) [![npm version](https://badge.fury.io/js/topmark-scrollspeed.svg)](https://badge.fury.io/js/topmark-scrollspeed)
 
 A [Topmarks](http://github.com/topmarks/topmarks) plugin to automate the testing of a website's scroll performance in chrome.
 
