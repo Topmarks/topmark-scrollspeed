@@ -23,18 +23,21 @@ let scrollspeed = (app, options) => {
             });
 
             chrome.Tracing.tracingComplete(() => {
-              let model = new DevtoolsTimelineModel(rawEvents);
-              let frames = new FramesUtil(model.frameModel()._frames);
-              let results = {
-                averageFrameRate: frames.getAverageFrameRate(),
-                totalFrameCount: frames.getTotalFrameCount(),
-                totalLargeFrameCount: frames.getTotalLargeFrameCount(),
-                frameBreakDown: frames.getBreakDownPercentage()
-              };
-              app.root.addResults(options.url,module.exports.attributes.name,results);
               app.Chrome.Close({port: options.port, id: tab.id}).then(() => {
-                chrome.close();
-                resolve();
+                chrome.ws.onclose = (event) => {
+                  let model = new DevtoolsTimelineModel(rawEvents);
+                  let frames = new FramesUtil(model.frameModel()._frames);
+                  let results = {
+                    averageFrameRate: frames.getAverageFrameRate(),
+                    totalFrameCount: frames.getTotalFrameCount(),
+                    totalLargeFrameCount: frames.getTotalLargeFrameCount(),
+                    frameBreakDown: frames.getBreakDownPercentage()
+                  };
+                  app.root.addResults(options.url,module.exports.attributes.name,results);
+                  event.target.removeAllListeners();
+                  resolve();
+                }
+                chrome.ws.close();
               }).catch(err => reject(Error(err)));
             });
 
