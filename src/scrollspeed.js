@@ -13,10 +13,12 @@ let scrollspeed = (app, options) => {
   let chromeHelper = new ChromeHelper(options.port, options.url);
   return chromeHelper.startupChrome()
   .then((results) => chrome = results[1])
-  .then(() => chrome.Runtime.evaluate({expression: "document.body.clientHeight - window.innerHeight"}))
+  .then(() => {
+    return chrome.Runtime.evaluate({expression: "document.body.clientHeight - window.innerHeight"})
+  })
   .then((params) => {
     return new Promise((resolve, reject) => {
-      if(!params || (params.result.value <= 0)) {
+      if(!params || !params.hasOwnProperty('result') || (params.result.value <= 0)) {
         reject('Could not determine page height or it is too small to scroll');
       } else {
         scrollHeight = -parseInt(params.result.value);
