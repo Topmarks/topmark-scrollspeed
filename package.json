@@ -18,6 +18,12 @@
   "bugs": {
     "url": "https://github.com/Topmarks/topmark-scrollspeed/issues"
   },
+  "nyc": {
+    "exclude": [
+      "lib",
+      "test"
+    ]
+  },
   "author": "Garth Braithwaite <garthdb@gmail.com> (http://garthdb.com)",
   "license": "Apache-2.0",
   "devDependencies": {
@@ -33,6 +39,7 @@
     "topmarks": "*"
   },
   "dependencies": {
+    "chrome-helper": "^0.2.0",
     "devtools-timeline-model": "^1.1.6"
   }
 }
