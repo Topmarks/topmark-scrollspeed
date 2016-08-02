@@ -67,7 +67,7 @@ const scrollspeed = (app, options) => {
           totalLargeFrameCount: frames.getTotalLargeFrameCount(),
           frameBreakDown: frames.getBreakDownPercentage(),
         };
-        app.root.addResults(options.url, module.exports.attributes.name, results);
+        app.addResults(results);
         resolve();
       });
       chrome.Tracing.start({
