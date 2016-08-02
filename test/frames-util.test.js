@@ -6,13 +6,15 @@ import path from 'path';
 
 chai.should();
 
-let file = path.join(__dirname, 'fixtures', 'devtools-timeline.trace');
+const file = path.join(__dirname, 'fixtures', 'devtools-timeline.trace');
 
 describe('FramesUtil', () => {
-  let model, frames;
-  before(function(done) {
+  let model;
+  let frames;
+  before(function before(done) {
     this.timeout(10000);
     model = new DevtoolsTimelineModel(JSON.parse(fs.readFileSync(file, 'utf8')));
+    // eslint-disable-next-line no-underscore-dangle
     frames = new FramesUtil(model.frameModel()._frames);
     done();
   });

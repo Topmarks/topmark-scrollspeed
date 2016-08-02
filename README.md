@@ -1,8 +1,16 @@
 # Scrollspeed
 
-[![Build Status](https://travis-ci.org/Topmarks/topmark-scrollspeed.svg?branch=master)](https://travis-ci.org/Topmarks/topmark-scrollspeed) [![Coverage Status](https://coveralls.io/repos/github/Topmarks/topmark-scrollspeed/badge.svg?branch=master)](https://coveralls.io/github/Topmarks/topmark-scrollspeed?branch=master) [![npm version](https://badge.fury.io/js/topmark-scrollspeed.svg)](https://badge.fury.io/js/topmark-scrollspeed)
+[![Build Status](https://travis-ci.org/Topmarks/topmark-scrollspeed.svg?branch=master)](https://travis-ci.org/Topmarks/topmark-scrollspeed) [![Code Climate](https://codeclimate.com/github/Topmarks/topmark-scrollspeed/badges/gpa.svg)](https://codeclimate.com/github/Topmarks/topmark-scrollspeed) [![Test Coverage](https://codeclimate.com/github/Topmarks/topmark-scrollspeed/badges/coverage.svg)](https://codeclimate.com/github/Topmarks/topmark-scrollspeed/coverage) [![Issue Count](https://codeclimate.com/github/Topmarks/topmark-scrollspeed/badges/issue_count.svg)](https://codeclimate.com/github/Topmarks/topmark-scrollspeed) [![Dependency Status](https://david-dm.org/topmarks/topmark-scrollspeed.svg)](https://david-dm.org/topmarks/topmark-scrollspeed) [![Inline docs](http://inch-ci.org/github/Topmarks/topmark-scrollspeed.svg?branch=master)](http://inch-ci.org/github/Topmarks/topmark-scrollspeed) [![npm version](https://badge.fury.io/js/topmark-scrollspeed.svg)](https://badge.fury.io/js/topmark-scrollspeed)
 
 A [Topmarks](http://github.com/topmarks/topmarks) plugin to automate the testing of a website's scroll performance in chrome.
+
+## Installation
+
+Install from npm [npm](https://docs.npmjs.com/getting-started/installing-node).
+
+```sh
+npm install topmark-scrollspeed
+```
 
 ## Usage
 
