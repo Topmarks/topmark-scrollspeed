@@ -1,6 +1,6 @@
 {
   "name": "topmark-scrollspeed",
-  "version": "0.3.1",
+  "version": "0.3.0",
   "description": "Topmarks plugin for checking scroll performance",
   "main": "./lib/scrollspeed.js",
   "scripts": {
@@ -29,9 +29,6 @@
   "nyc": {
     "include": [
       "src/*.js"
-    ],
-    "exclude": [
-      "src/src/*.js"
     ],
     "require": [
       "babel-register"

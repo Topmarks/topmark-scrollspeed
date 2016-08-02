@@ -25,7 +25,7 @@ describe('FramesUtil', () => {
     frames.getAverageFrameRate().should.equal(46.47);
   });
   it('should return total frame count', () => {
-    frames.getTotalFrameCount().should.equal(207);
+    frames.getTotalFrameCount().should.equal(frames.frames.length);
   });
   it('should count large frames', () => {
     frames.getTotalLargeFrameCount().should.equal(32);
